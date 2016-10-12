@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record id="personalization_list_action" model="ir.ui.view">
+			<field name="name">personalization.odoo.view</field>
+			<field name="model">personalization.odoo</field>
+			<field name="arch" type="xml">
+				<form string="Personalizacion odoo" create="false" delete="false">
+					<field name="odoo_username" string="Odoo Username"/>
+				</form>
+			</field>
+		</record>
+        <!-- Definimos la accion -->
+        <record model="ir.actions.act_window" id="act_personalization_list_action">
+            <field name="name">Personalizacion odoo</field>
+            <field name="res_model">personalization.odoo</field>
+            <field name="arch" type="xml">
+				<form string="Personalizacion odoo" create="false" delete="false">
+					<field name="odoo_username" string="Odoo Username"/>
+				</form>
+			</field>
+        </record>
+
+		<menuitem id="open_custom_settings" name="Personalizaciones odoo" parent="base.menu_config" action="act_personalization_list_action" />
+    </data>
+</openerp>
